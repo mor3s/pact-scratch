@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+  zoom:
+    build: ./server/zoomlike
+    ports: 
+      - "80:80"
+      - "3001:3001"
+
+  nginx:
+    build: ./nginx
+    depends_on: 
+      - zoom
+
+  
+  debug:
+    image: ubuntu
+
+    command: bash -c "while :; do sleep 1; done"
+
+  ai:
+    build: ./ai

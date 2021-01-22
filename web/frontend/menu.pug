@@ -1,0 +1,144 @@
+head
+    style
+        include menu.css
+
+
+- 
+  var navigation = [
+    {
+      id: 'pets',
+      link: '#pets',
+      title: 'Pets',
+      type: [
+        {
+          id: 'cat',
+          title: 'cat'
+        },
+        {
+          id: 'dog',
+          title: 'dog'
+        },
+        {
+          id: 'ferret',
+          title: 'ferret'
+        }
+      ]
+    },
+    {
+      id: 'farm_animals',
+      link: '#farm_animals',
+      title: 'Farm Animals',
+      type: [
+        {
+          id: 'cow',
+          title: 'cow'
+        },
+        {
+          id: 'horse',
+          title: 'horse'
+        },
+        {
+          id: 'sheep',
+          title: 'sheep'
+        },
+        {
+          id: 'chicken',
+          title: 'chicken'
+        }
+      ]
+    },
+    {
+      id: 'exotic_animals',
+      link: '#exotic_animals',
+      title: 'Exotic animals',
+      type: [
+        {
+          id: 'camel',
+          title: 'camel'
+        },
+        {
+          id: 'kangaroo',
+          title: 'kangaroo'
+        },
+        {
+          id: 'peacock',
+          title: 'peacock'
+        }
+      ]
+    },
+    {
+      id: 'forest_animals',
+      link: '#forest_animals',
+      title: 'Forest animals',
+      type: [
+        {
+          id: 'badger',
+          title: 'badger'
+        },
+        {
+          id: 'bear',
+          title: 'bear'
+        },
+        {
+          id: 'hedgehog',
+          title: 'hedgehog'
+        },
+        {
+          id: 'mole',
+          title: 'mole'
+        },
+        {
+          id: 'wolf',
+          title: 'wolf'
+        },
+      ]
+    },
+    {
+      id: 'birds',
+      link: '#birds',
+      title: 'Birds',
+      type: [
+        {
+          id: 'hawk',
+          title: 'hawk'
+        },
+        {
+          id: 'pheasant',
+          title: 'pheasant'
+        },
+        {
+          id: 'pheasant',
+          title: 'pheasant'
+        }
+      ]
+    },
+    {
+      id: 'insects',
+      link: '#insects',
+      title: 'Insects',
+      type: [
+        {
+          id: 'dragonfly',
+          title: 'dragonfly'
+        },
+        {
+          id: 'butterfly',
+          title: 'butterfly'
+        },
+        {
+          id: 'moth',
+          title: 'moth'
+        }
+      ]
+    }
+  ]
+  
+nav.navigation
+  ul.navigation__list
+    each item in navigation
+      li.navigation__element
+        a(href=item.link, class='navigation__link--'+item.id).navigation__link=item.title
+        ul.navigation__submenu
+          each item_sub in item.type
+            li.navigation__submenu-element
+              a(href='#'+item_sub.id).navigation__submenu-link=item_sub.title
